@@ -7,7 +7,7 @@ def load_config():
     FolderLocation = input("Please Input the file path for the folder of the Long Term Listening Logs")
     FolderLocation = FolderLocation.replace("\\", "\\")
     ListeningLogLongTerm = pd.DataFrame()
-    NamingConvention = 'Streaming_History_Audio_2020_*.json'  #This matches any file that starts with Streaming_History_Audio_2020_ and use the * as a wildcard operator to match the number. 
+    NamingConvention = 'Streaming_History_Audio_202*_*.json'  #This matches any file that starts with Streaming_History_Audio_2020_ and use the * as a wildcard operator to match the number. 
     FilePaths = glob.glob(f'{FolderLocation}/{NamingConvention}')
     for FilePath in FilePaths:
         LongTermJsonRead = pd.read_json(FilePath)
